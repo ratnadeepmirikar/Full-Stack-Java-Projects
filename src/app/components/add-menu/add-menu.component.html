@@ -1,0 +1,60 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="menu"><b>MenuName</b></label>
+        <input 
+       
+          type="text"
+          class="form-control"
+          id="menuname"
+          required
+          
+          [(ngModel)]="menu.menuName"
+          name="MenuName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity"><b>Quantity</b></label>
+        <input
+       
+          class="form-control"
+          id="Quantity"
+          required
+          [(ngModel)]="menu.quantity"
+          name="quantity"
+        />
+      </div>
+      <div class="form-group">
+        <label for="quantity"><b>Price</b></label>
+        <input
+       
+          class="form-control"
+          id="Price"
+          required
+          [(ngModel)]="menu.price"
+          name="price"
+        />
+      </div>
+     <!-- <div class="form-group">
+        <label for="quantity">TotalBill</label>
+        <input
+          class="form-control"
+          id="total"
+          required
+          [(ngModel)]="menu.totalbill"
+          name="totalbill"
+        />
+      </div>-->
+      
+
+      <button (click)="savemenu()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4><b>Menu was submitted successfully!</b></h4>
+      <button class="btn btn-success" (click)="newmenu()">Add</button>
+    </div>
+  </div>
+</div>

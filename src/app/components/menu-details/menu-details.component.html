@@ -1,0 +1,85 @@
+<div>
+  <div *ngIf="currentmenu.menuid" class="edit-form">
+    <h4>Menu</h4>
+    <form>
+      <div class="form-group">
+        <label for="menuname"><b>MenuName</b></label>
+        <input
+          type="text"
+          class="form-control"
+          id="menuname"
+          [(ngModel)]="currentmenu.menuName"
+          name="MenuName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="quantity"><b>Quantity</b></label>
+        <input
+          type="text"
+          class="form-control"
+          id="quantity"
+          [(ngModel)]="currentmenu.quantity"
+          name="quantity"
+        />
+      </div>
+      <div class="form-group">
+        <label for="price"><b>Price</b></label>
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentmenu.price"
+          name="price"
+        />
+      </div>
+      <!--<div class="form-group">
+        <label for="totalbill">TotalBill</label>
+        <input
+          type="text"
+          class="form-control"
+          id="totalbill"
+          [(ngModel)]="currentmenu.totalbill"
+          name="totalbill"
+        />
+      </div>
+      >
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div> -->
+    </form>
+
+    <!-- <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button> -->
+    <!-- <button
+      *ngIf="!currentTutorial.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button> -->
+
+    <button class="Delete" (click)="deletemenu()">
+      <b>Delete</b>
+    </button>
+
+    <button
+      type="submit"
+      class="Update"
+      (click)="updateMenu()"
+    >
+      <b>Update</b>
+    </button></div>
+    <p><b>{{ message }}</b></p>
+  </div>
+
+  <div *ngIf="!currentmenu.menuid">
+    <br />
+    <p><b>Cannot access this Menu...</b></p>
+  </div>

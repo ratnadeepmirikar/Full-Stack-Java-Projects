@@ -1,0 +1,74 @@
+<div class="list row">
+    <div class="col-md-8">
+      <!-- <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="menu"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-md-6">
+      <h4>Menu List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let menu of Menu; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivemenu(menu, i)"
+        >
+          {{ menu.menuName }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllmenu()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentmenu.menuid">
+        <h4>Menu</h4>
+        <div>
+          <label><strong>Menuid:</strong></label> {{ currentmenu.menuid }}
+        </div>
+        <div>
+          <label><strong>MenuName:</strong></label> {{ currentmenu.menuName }}
+        </div>
+        <div>
+          <label><strong>Quantity:</strong></label>
+          {{ currentmenu.quantity }}
+        </div>
+        <div>
+          <label><strong>Price:</strong></label>
+          {{ currentmenu.price  }}
+        </div>
+        <!--<div>
+            <label><strong>TotalBill:</strong></label>
+            {{ currentmenu.totalbill }}
+          </div>-->
+          <div>
+
+          
+            
+            
+  
+            <button class="Edit"  routerLink = "/menus/{{currentmenu.menuid}}"><b>Edit</b></button>
+      
+  
+      <div *ngIf="!currentmenu">
+        <br />
+        <p>Please click on a Menu...</p>
+      </div>
+    
+  
+    
